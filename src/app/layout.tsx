@@ -18,6 +18,9 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
 	title: "DevSphere",
 	description: "DevSphere is StackOverflow + A.I",
+	icons: {
+		icon: "/images/site-logo.svg",
+	},
 };
 
 export default function RootLayout({

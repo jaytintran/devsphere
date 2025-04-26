@@ -2,7 +2,7 @@
 
 **_Where Developers Don’t Just Ask – They Build, Share, and Evolve._**
 
-Welcome to **DevSphere** – a full-stack collaborative Q&A platform tailor-made for modern dev teams. Think of it as Stack Overflow meets Notion for your squad — not just a place to get answers, but a **launchpad for solving, storing, and scaling** technical solutions across your team or org.
+Welcome to **DevSphere** – a full-stack collaborative Q&A platform tailor-made for modern dev teams. Think of it as Stack Overflow meets Notion for your squad — not just a place to get answers, but a **launchpad for solving, storing, and scaling** technical solutions across your team or org. A community-driven platform for asking and answering programming questions. Get help, share knowledge, and collaborate with developers from around the world. Explore topics in web development, mobile app development, algorithms, data structures, and more.
 
 Built on the bleeding edge of tech using **Next.js 15**, DevSphere transforms knowledge-sharing into a **living, breathing workspace** where code, context, and collaboration converge.
 
