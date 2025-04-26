@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--background: #ffffff;
+	--foreground: #171717;
+	--font-poppins: "Poppins", sans-serif;
+	--font-space-grotesk: "Space Grotesk", sans-serif;
+}
+
+@theme {
+	/* Colors */
+	/* example: bg-primary-100 -> #fff1e6 */
+	--color-primary-100: #fff1e6;
+	/* example: bg-primary-500 -> #ff7000 */
+	--color-primary-500: #ff7000;
+	/* example: bg-dark-100 -> #000000 */
+	--color-dark-100: #000000;
+	/* example: bg-dark-200 -> #0f1117 */
+	--color-dark-200: #0f1117;
+	/* example: bg-dark-300 -> #151821 */
+	--color-dark-300: #151821;
+	/* example: bg-dark-400 -> #212734 */
+	--color-dark-400: #212734;
+	/* example: bg-dark-500 -> #101012 */
+	--color-dark-500: #101012;
+	/* example: bg-light-400 -> #858ead */
+	--color-light-400: #858ead;
+	/* example: bg-light-500 -> #7b8ec8 */
+	--color-light-500: #7b8ec8;
+	/* example: bg-light-700 -> #dce3f1 */
+	--color-light-700: #dce3f1;
+	/* example: bg-light-800 -> #f4f6f8 */
+	--color-light-800: #f4f6f8;
+	/* example: bg-light-850 -> #fdfdfd */
+	--color-light-850: #fdfdfd;
+	/* example: bg-light-900 -> #ffffff */
+	--color-light-900: #ffffff;
+
+	/* Border Radius */
+	/* example: rounded-2 -> 8px */
+	--radius-1-5: 6px;
+	/* example: rounded-1-5 -> 6px */
+	--radius-2: 8px;
+	/* example: rounded-lg -> var(--radius) */
+	--radius-lg: var(--radius);
+	/* example: rounded-md -> calc(var(--radius) - 2px) */
+	--radius-md: calc(var(--radius) - 2px);
+	/* example: rounded-sm -> calc(var(--radius) - 4px) */
+	--radius-sm: calc(var(--radius) - 4px);
+
+	/* Shadows */
+	/* example: shadow-light-100 -> 0px 12px 20px... */
+	--shadow-light-100: 0px 12px 20px 0px rgba(184, 184, 184, 0.03),
+		0px 6px 12px 0px rgba(184, 184, 184, 0.02),
+		0px 2px 4px 0px rgba(184, 184, 184, 0.03);
+	/* example: shadow-light-200 -> 10px 10px 20px... */
+	--shadow-light-200: 10px 10px 20px 0px rgba(218, 213, 213, 0.1);
+	/* example: shadow-light-300 -> 10px 10px 20px... */
+	--shadow-light-300: -10px 10px 20px 0px rgba(218, 213, 213, 0.15);
+	/* example: shadow-dark-100 -> 0px 2px 10px... */
+	--shadow-dark-100: 0px 2px 10px 0px rgba(46, 52, 56, 0.1);
+	/* example: shadow-dark-200 -> 2px 0px 20px... */
+	--shadow-dark-200: 2px 0px 20px 0px rgba(39, 36, 36, 0.04);
+
+	/* Background Images */
+	--bg-auth-light: url(/images/auth-light.png);
+	--bg-auth-black: url(/images/auth-dark.png);
+
+	/* Screens */
+	--breakpoint-xs: 240px;
+
+	/* Fonts */
+	--font-space-grotesk: var(--font-space-grotesk);
+	--font-poppins: var(--font-poppins);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-poppins: var(--font-poppins);
+	--font-space-grotesk: var(--font-space-grotesk);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	background: var(--background);
+	color: var(--foreground);
 }
