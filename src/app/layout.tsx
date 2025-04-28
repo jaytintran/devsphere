@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Poppins, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/context/Theme";
+import Navbar from "@/components/navigation/navbar";
 
 const poppins = Poppins({
 	subsets: ["latin"],
@@ -41,6 +42,7 @@ export default function RootLayout({
 				enableSystem
 				disableTransitionOnChange
 			>
+				<Navbar />
 				<body>{children}</body>
 			</ThemeProvider>
 		</html>
