@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Poppins, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import ThemeProvider from "@/context/Theme";
 
 const poppins = Poppins({
 	subsets: ["latin"],
@@ -29,8 +30,19 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" className={`${poppins.variable} ${spaceGrotesk.variable}`}>
-			<body>{children}</body>
+		<html
+			lang="en"
+			className={`${poppins.variable} ${spaceGrotesk.variable}`}
+			suppressHydrationWarning
+		>
+			<ThemeProvider
+				attribute="class"
+				defaultTheme="dark"
+				enableSystem
+				disableTransitionOnChange
+			>
+				<body>{children}</body>
+			</ThemeProvider>
 		</html>
 	);
 }
