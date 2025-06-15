@@ -3,6 +3,7 @@ import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
 // Import Google provider only when not in middleware context
 import type { NextAuthConfig } from "next-auth";
+import Google from "next-auth/providers/google";
 
 // Define the configuration separately
 const authConfig: NextAuthConfig = {
@@ -11,7 +12,10 @@ const authConfig: NextAuthConfig = {
 			clientId: process.env.GITHUB_CLIENT_ID,
 			clientSecret: process.env.GITHUB_CLIENT_SECRET,
 		}),
-		// Google provider will be added dynamically
+		Google({
+			clientId: process.env.GOOGLE_CLIENT_ID,
+			clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+		}),
 	],
 	pages: {
 		signIn: "/sign-in",
