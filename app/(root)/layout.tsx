@@ -4,7 +4,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<main className="min-h-screen bg-background">
 			<Navbar />
-			{children}
+			<section className="background-light-850-dark-100">{children}</section>
 		</main>
 	);
 };

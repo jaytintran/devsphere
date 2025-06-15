@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { Poppins, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "../context/Theme";
+import { Toaster } from "sonner";
+import { SessionProvider } from "next-auth/react";
+import { auth } from "@/auth";
 
 const poppins = Poppins({
 	subsets: ["latin"],
-	weight: ["400", "500", "600", "700"], // Pick the weights you need
-	variable: "--font-poppins", // You can name your CSS variable
+	weight: ["400", "500", "600", "700"],
+	variable: "--font-poppins",
 });
 
 const spaceGrotesk = Space_Grotesk({
@@ -24,25 +26,32 @@ export const metadata: Metadata = {
 	},
 };
 
-export default function RootLayout({
-	children,
-}: Readonly<{
-	children: React.ReactNode;
-}>) {
+const RootLayout = async ({ children }: { children: React.ReactNode }) => {
+	const session = await auth();
+
+	console.log(session);
+
 	return (
 		<html
 			lang="en"
 			className={`${poppins.variable} ${spaceGrotesk.variable}`}
 			suppressHydrationWarning
 		>
-			<ThemeProvider
-				attribute="class"
-				defaultTheme="dark"
-				enableSystem
-				disableTransitionOnChange
-			>
-				<body>{children}</body>
-			</ThemeProvider>
+			<body>
+				<SessionProvider session={session}>
+					<ThemeProvider
+						attribute="class"
+						defaultTheme="dark"
+						enableSystem
+						disableTransitionOnChange
+					>
+						{children}
+						<Toaster />
+					</ThemeProvider>
+				</SessionProvider>
+			</body>
 		</html>
 	);
-}
+};
+
+export default RootLayout;
