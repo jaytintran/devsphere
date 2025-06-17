@@ -1,5 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
+import { AuthForm } from "@/components/forms/AuthForm";
+import { SignInSchema } from "@/lib/validations";
 
 export const metadata: Metadata = {
 	title: "Sign In | DevSphere",
@@ -15,6 +17,7 @@ const SignIn = () => {
 			</p>
 
 			{/* Form content will be rendered by the layout */}
+			<AuthForm formType="SIGN_IN" schema={SignInSchema} />
 		</div>
 	);
 };
